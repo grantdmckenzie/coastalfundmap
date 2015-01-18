@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12pt;
+  color: #333;
+}
+
+#map {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 71px;
+  bottom: 0px;
+}
+
+#header {
+  position: absolute;
+  top: 0px;
+  bottom: 70px;
+  left: 0px;
+  right:0px;
+  background-color: #fff;
+  margin: 10px;
+}
+#hTitle {
+  font-size: 2.4em;
+  font-weight: normal;
+  float: left;
+  margin-left: 10px;
+}
+#hNav {
+  float: right;
+  margin-right: 10px;
+  width:600px;
+}
+
+.nav {
+    float: right;
+    font-size: 1em;
+    border: solid 1px #5f3c26;
+    border-radius: 3px;
+    padding: 5px 15px;
+    margin: 10px 5px;
+    cursor: pointer;
+}
+.nav:hover {
+    color: #fff;
+    background-color: #9dbde3;
+}
+
+#wLayers{
+  z-index: 2;
+  position: absolute;
+  right: 10px;
+  top: 80px;
+  width: 300px;
+  bottom: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+    color: #666;
+    margin-bottom: 3px;
+}
+
+.selected {
+    background-color: #9dbde3;
+    border-radius: 3px;
+}
+.histlayer {
+    cursor: pointer;
+    padding: 3px 20px;
+    background-image: url('../img/raster.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+.histlayer:hover {
+    color: #5f3c26;
+    font-weight: bold;
+}
+.accord {
+    height: 200px;
+    display: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 4px 10px;
+}
+.lTitle {
+    font-weight: 300;
+    cursor: pointer;
+    padding: 3px 20px;
+    background-image: url('../img/rightarrow.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+}

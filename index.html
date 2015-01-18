@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coastal Fund Interactive Map</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="js/vendor/leaflet.css" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+    <div id="header">
+      <img src="img/logo.jpg" alt="Coastal Fund Logo" style="float:left;"/>
+      <div id="hTitle">Coastal Fund Interactive Map</div>
+      <div id="hNav">
+	<div id="nAbout" class="nav">About</div>
+	<div id="nLayers" class="nav">Layers</div>
+      </div>
+    </div>
+	<div id="map"></div>
+	<div id="wLayers">
+	  <h3>Layers</h3>
+	  <div class="lTitle" id="tHistory" onclick="toggleHistory();">Historic Aerial Imagery</div>
+	  <div id="lhistoric" class="accord"></div>
+	  <div class="lTitle" onclick="toggleHistory();">Informative Content</div>
+	  <div id="linform" class="accord"></div>
+	  <div class="lTitle" onclick="toggleHistory();">Social Data</div>
+	  <div id="lsocial" class="accord"></div>
+	</div>
+	<script src="js/vendor/stamen.js"></script>
+	<script src="js/vendor/leaflet.js"></script>
+	<script src="js/vendor/jquery-1.11.2.min.js"></script>
+	<script src="js/data/historicimagery.json"></script>
+	<script src="js/map.js"></script>
+</body>
+</html>

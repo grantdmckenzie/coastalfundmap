@@ -23,7 +23,16 @@
     // Close the cURL resource, and free system resources
     curl_close($ch);
  
-    var_dump($output);
+    $data = json_decode($output);
+    
+    if ($data->meta->code == "200") {
+    
+      foreach($data->data as $photo) {
+	var_dump($photo);
+	break;
+      }
+      
+    }
 
 
 

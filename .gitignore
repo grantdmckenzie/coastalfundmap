@@ -1,2 +1,3 @@
 instagramaccount.txt
-handlers/connection_details.inc
+handlers/connection_details.php
+instagram.php

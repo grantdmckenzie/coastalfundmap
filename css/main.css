@@ -82,7 +82,7 @@ h3 {
 }
 .histlayer {
     cursor: pointer;
-    padding: 3px 20px;
+    padding: 3px 28px;
     background-image: url('../img/raster.png');
     background-repeat: no-repeat;
     background-position: left center;

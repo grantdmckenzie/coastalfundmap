@@ -14,7 +14,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="js/vendor/leaflet.css" />
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
@@ -22,6 +22,7 @@
       <img src="img/logo.jpg" alt="Coastal Fund Logo" style="float:left;"/>
       <div id="hTitle">Coastal Fund Interactive Map</div>
       <div id="hNav">
+	<div id="nContact" class="nav">Contact</div>
 	<div id="nAbout" class="nav">About</div>
 	<div id="nLayers" class="nav">Layers</div>
       </div>
@@ -35,13 +36,39 @@
 	  <div id="linform" class="accord"></div>
 	  <div class="lTitle" id="tSocial" onclick="toggleSocial();">Social Data</div>
 	  <div id="lsocial" class="accord">
-	    Instagram
+	      <div class="slayer" id="linstagram">Instagram Photographs</div>
+	      <div class="flayer" id="lfoursquare">Foursquare Points of Interest</div>
 	  </div>
+	</div>
+	<div id="footer">
+	
+	<div style='float:left;'>
+	
+	  <a href="http://stko.geog.ucsb.edu" target="_blank"><img src="img/stko.png"/></a>
+	  <a href="http://geog.ucsb.edu" target="_blank"><img src="img/geo.png"/></a>
+	  <a href="http://coastalfund.as.ucsb.edu/" target="_blank"><img src="img/coastalfund.png"/></a>
+	  </div>
+	  <div style="float:left;color:#fff;font-size:2em;font-weight:bold;margin:0px 10px">SHARE</div>
+	  <img src="img/facebook.png"/>
+	  <img src="img/twitter32.png"/>
+	  <img src="img/googleplus.png"/>
+	  <img src="img/pinterest-32.png"/>
+	  <img src="img/email-32.png"/>
 	</div>
 	<script src="js/vendor/stamen.js"></script>
 	<script src="js/vendor/leaflet.js"></script>
 	<script src="js/vendor/jquery-1.11.2.min.js"></script>
 	<script src="js/data/historicimagery.json"></script>
 	<script src="js/map.js"></script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-58697624-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
 </body>
 </html>

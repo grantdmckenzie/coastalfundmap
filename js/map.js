@@ -13,6 +13,15 @@ var esri = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/Worl
 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 });
 
+var nationalmap = L.tileLayer('http://basemap.nationalmap.gov/ArcGIS/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+});
+
+var nationalimagery = L.tileLayer('http://services.nationalmap.gov/arcgis/rest/services/USGSImageryTopoLarge/MapServer/tile/{z}/{y}/{x}', {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+});	
+
+
 
 map.addLayer(stamen);
 
@@ -27,6 +36,7 @@ for(var propt in histimgnames) {
   });
 }
 
+// http://raster.nationalmap.gov/arcgis/rest/services/Orthoimagery/USGS_EROS_Ortho_NAIP/ImageServer
 // map.addLayer(histlayers[11]);
 
 popHistoric();
@@ -64,6 +74,14 @@ $('#lfoursquare').on('click',function() {
     $(this).toggleClass('selected');
 });
 
+$('#ltweets').on('click',function() {
+    if(map.hasLayer(tw_layer))
+      map.removeLayer(tw_layer);
+    else
+      tw_layer.addTo(map);
+    $(this).toggleClass('selected');
+});
+
 var _INSTAGRAM =  [];
 var  inst_layer = null;
 
@@ -82,6 +100,12 @@ var instaIcon = L.icon({
 var fsIcon = L.icon({
     iconUrl: 'img/foursquare.png',
     iconSize:     [23, 23], // size of the icon
+    iconAnchor:   [12, 12], // point of the icon which will correspond to marker's location
+    popupAnchor:  [0, -6] // point from which the popup should open relative to the iconAnchor
+});
+var twIcon = L.icon({
+    iconUrl: 'img/twitter24.png',
+    iconSize:     [24, 24], // size of the icon
     iconAnchor:   [12, 12], // point of the icon which will correspond to marker's location
     popupAnchor:  [0, -6] // point from which the popup should open relative to the iconAnchor
 });
@@ -117,6 +141,25 @@ $.ajax({
       }
       fs_layer = L.layerGroup(_FOURSQUARE);
       // fs_layer.addTo(map);
+   },
+   type: 'GET'
+});
+
+var _TWITTER =  [];
+var  tw_layer = null;
+
+$.ajax({
+   url: 'handlers/twitter.php',
+   error: function(a, b, c) {
+      alert('error');
+   },
+   dataType: 'json',
+   success: function(data) {
+      for(var i=0;i<data.length;i++) {
+	  _TWITTER.push(L.marker([data[i].lat, data[i].lng],{icon: twIcon}).bindPopup("<div style='text-align:center;width:200px;'><u>Tweet</u><br/><span style='font-size:1.2;font-weight:bold;'>"+data[i].tweet+"</span><br/>Category: "+data[i].src+"<br/><a href='http://foursquare.com/venue/"+data[i].id+"' target='_blank'>More Information</a></div>"));
+      }
+      tw_layer = L.layerGroup(_TWITTER);
+      // tw_layer.addTo(map);
    },
    type: 'GET'
 });

@@ -102,6 +102,13 @@ h3 {
     background-repeat: no-repeat;
     background-position: left center;
 }
+.tlayer {
+    cursor: pointer;
+    padding: 3px 28px;
+    background-image: url('../img/twitter_16.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+}
 .histlayer:hover, .slayer:hover {
     color: #5f3c26;
     font-weight: bold;
